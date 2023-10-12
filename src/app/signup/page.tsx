@@ -14,7 +14,7 @@ export default () => {
 	const onSignup = async () => {};
 
 	return (
-		<div className='flex flex-col items-center justify-start bg-blue-400 h-screen pt-24 text-black'>
+		<div className='flex flex-col items-center justify-start bg-yellow-500 h-screen pt-24 text-black'>
 			<h1 className='text-2xl font-bold mb-6'>Welcome from Next project</h1>
 			<form onSubmit={onSignup} className='flex flex-col items-center'>
         <label htmlFor="username" className='mr-auto pb-1'>Username</label>

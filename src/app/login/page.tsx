@@ -13,7 +13,7 @@ export default () => {
 	const onLogin = async () => {};
 
 	return (
-		<div className='flex flex-col items-center justify-start bg-blue-400 h-screen pt-24 text-black'>
+		<div className='flex flex-col items-center justify-start bg-yellow-500 h-screen pt-24 text-black'>
 			<h1 className='text-2xl font-bold mb-6'>Welcome from Next project</h1>
 			<form onSubmit={onLogin} className='flex flex-col items-center'>
         <label htmlFor="email" className='mr-auto pb-1'>Email</label>
@@ -23,7 +23,7 @@ export default () => {
 				<button type='submit' className='p-2 bg-sky-950 text-slate-300 rounded-md mt-4'>Login</button>
 			</form>
       <Link href='/signup' className='text-indigo-950 mt-4'>
-        First time here? Sign up here
+        Doesn't have an account? Sign up here
       </Link>
 		</div>
 	);
