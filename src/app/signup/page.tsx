@@ -24,12 +24,13 @@ export default () => {
 		}
 	}, [user]);
 
-	const onSignup = async () => {
+	const onSignup = async (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
 		try {
 			setLoading(true);
 			const response = await axios.post('/api/users/signup', user);
 			console.log(response.data, 'Signup response');
-			router.push('/login');
+			router.push("/login");
 		} catch (error: any) {
 			console.log(error, 'Signup error');
 			toast.error(error.message);
@@ -40,7 +41,7 @@ export default () => {
 
 	return (
 		<div className='flex flex-col items-center justify-start bg-yellow-500 h-screen pt-24 text-black'>
-			<h1 className='text-2xl font-bold mb-6'>{ loading ? 'Loading' : 'Welcome from Next project' }</h1>
+			<h1 className='text-2xl font-bold mb-6'>{ loading ? 'Creating your account...' : 'Welcome from Next project' }</h1>
 			<form onSubmit={onSignup} className='flex flex-col items-center'>
 				<label htmlFor="username" className='mr-auto pb-1'>Username</label>
 				<input id='username'placeholder='Enter username' type='text' value={user.username} className='mb-2 rounded-sm px-2 py-1' onChange={e => setUser({...user, username: e.target.value})}/>
