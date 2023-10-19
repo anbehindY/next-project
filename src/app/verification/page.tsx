@@ -30,13 +30,17 @@ export default function Verification() {
   }, [token]);
 
   return (
-    <div className="flex flex-col min-h-screen justify-center items-center">
-      <h1>Email Verification</h1>
-      <h2>{token ? `${token}` : error && <p>{error}</p>}</h2>
+    <div className="flex flex-col min-h-screen justify-center items-center gap-4">
+      <h1 className="text-2xl font-semibold">Email Verification</h1>
+      {
+        token ?
+          <h2 className="bg-green-600 p-2 text-black rounded-lg mt-6">{token}</h2> :
+          <h2 className="bg-red-600 p-2 text-black rounded-lg mt-6">{error && <p>{error}</p>}</h2>
+      }
 
-      {verified && <div>
+      {verified && <div className="flex flex-col gap-4 items-center justify-center">
         <p>Your email is verified</p>
-        <Link href="/login">
+        <Link href="/login" className="bg-green-600 p-2 text-center w-20">
           Login
         </Link>
       </div>}
