@@ -40,8 +40,8 @@ export default async ({ email, emailType, userId }: any) => {
 			to: email, // list of receivers
 			subject: emailType === 'VERIFY' ? 'Verify your email' : 'Reset your password', // Subject line
 			text: 'Just wanna know how it works', // plain text body
-			html: `<p>Click <a href='${process.env.DOMAIN}/verification?token={hashedToken}'>here</a>
-      to {emailType === 'VERIFY' ? 'verify your email' : 'reset your password'} or copy and paste the link
+			html: `<p>Click <a href='${process.env.DOMAIN}/verification?token=${hashedToken}'>here</a>
+      to ${emailType === 'VERIFY' ? 'verify your email' : 'reset your password'} or copy and paste the link
       below your browser.<br>${process.env.DOMAIN}/verification?token=${hashedToken}</p>`, // html body
 		};
 
