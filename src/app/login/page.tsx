@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-export default () => {
+export default function Login() {
 	const router = useRouter();
 	const [user, setUser] = React.useState({
 		email: '',
@@ -50,7 +50,7 @@ export default () => {
 				<button type='submit' className='p-2 bg-sky-950 text-slate-300 rounded-md mt-4'>{buttonDisabled ? 'Not yet' : 'Login'}</button>
 			</form>
 			<Link href='/signup' className='text-indigo-950 mt-4'>
-				Doesn't have an account? Sign up here
+				Doesn&apos;t have an account? Sign up here
 			</Link>
 			<Link href='/reset' className='text-indigo-950 mt-4'>
 				Forgot password? Reset here

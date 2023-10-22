@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 
-export default () => {
+export default function Profile() {
   const router = useRouter();
   const [userData, setUserData] = useState('nothing yet')
   const logout = async () => {
