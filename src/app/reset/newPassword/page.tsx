@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation"
 import axios from "axios"
 import toast from "react-hot-toast"
 
-export default function newPassword() {
+export default function NewPassword() {
   const router = useRouter()
   const [token, setToken] = useState('')
   const [loading, setLoading] = useState(false)
