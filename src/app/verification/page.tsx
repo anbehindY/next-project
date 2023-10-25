@@ -10,7 +10,8 @@ export default function Verification() {
   const [verified, setVerified] = useState(false);
 
   useEffect(() => {
-    const token = window.location.search.split("=")[1];
+    const encodedToken = window.location.search.split("=")[1];
+    const token = decodeURIComponent(encodedToken);
     setToken(token || "");
   }, []);
 
