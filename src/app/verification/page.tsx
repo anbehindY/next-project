@@ -10,15 +10,14 @@ export default function Verification() {
   const [verified, setVerified] = useState(false);
 
   useEffect(() => {
-    const url = window.location.search
-    const token = url.split("=")[1];
+    const token = window.location.search.split("=")[1];
     setToken(token || "");
   }, []);
 
   useEffect(() => {
     if (token) {
       axios
-        .post("api/users/verification", { token })
+        .post("/api/users/verification", { token })
         .then((res) => {
           toast.success(res.data.message);
           setVerified(true);
